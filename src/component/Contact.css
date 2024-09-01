@@ -1,0 +1,9 @@
+.contact{
+    /* background: linear-gradient(90deg, rgba(18,18,18,1) 0%, rgba(39,39,39,1) 35%, rgba(92,92,92,1) 100%); */
+    padding: 32px;
+    color: #fff;
+    background-color: #021721;
+} 
+.ant-form-item .ant-form-item-label >label{
+    color: #fff;
+}

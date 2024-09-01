@@ -1,0 +1,44 @@
+/* Resume.css */
+
+.resume-section {
+    background: #232426;
+    padding: 32px;
+  }
+  
+  .resume-image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .resume-image {
+    max-width: 100%;
+    height: auto;
+  }
+  
+  .resume-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .resume-title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 16px;
+  }
+  
+  .resume-description {
+    font-size: 16px;
+  }
+  
+  .resume-link {
+    color: #1890ff; /* Ant Design primary color */
+    text-decoration: underline;
+  }
+  
+  .resume-link:hover {
+    color: #40a9ff; /* Slightly lighter blue for hover effect */
+  }
+  

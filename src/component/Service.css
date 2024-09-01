@@ -1,0 +1,88 @@
+/* Service.css */
+
+.service-section {
+    padding: 32px;
+    background: linear-gradient(90deg, rgb(0 0 0) 0%, rgb(25 54 65) 100%);
+    color: white;
+  }
+  
+  .service-header {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  
+  .service-title {
+    font-size: 36px;
+    margin-bottom: 16px;
+    border-bottom: 4px solid white;
+    display: inline-block;
+    padding-bottom: 10px;
+  }
+  
+  .service-description {
+    font-size: 16px;
+    color: white;
+  }
+  
+  .service-slider {
+    /* width: 100%; */
+    padding: 30px;
+  }
+  
+  .service-card {
+    position: relative;
+    width: 90% !important;
+    height: 100px;
+  }
+  
+  .service-card-content {
+    background-color: transparent;
+  }
+  
+  .service-card-description {
+    text-align: center;
+    color: white;
+  }
+  .service-card-image{
+    width: 200px;
+  }
+
+  .service-section .ant-card .ant-card-cover >*{
+    display: block;
+    width: 100%;
+    border-radius: 8px 8px 0 0;
+    height: 200px;
+
+  }.service-card-content {
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .service-card img:hover {
+    transform: scale(1.1);
+  }
+  
+  .service-card-description {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    padding: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    font-size: 14px;
+    text-align: center;
+  }
+  
+  .service-card-content:hover .service-card-description {
+    opacity: 1;
+  }
+  
