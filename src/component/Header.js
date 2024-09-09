@@ -38,7 +38,7 @@ const Header = () => {
           </Menu.Item>
           <Menu.Item key="service" className={activeLink === "service" ? "active-link" : ""}>
             <Link to="service" smooth={true} duration={500}  onClick={() => handleSetActive("service")}>
-              Project
+              Service
             </Link>
           </Menu.Item>
           {/* <Menu.Item key="resume" className={activeLink === "resume" ? "active-link" : ""}>
@@ -100,10 +100,10 @@ const Header = () => {
               duration={500}
               style={{ color: "white" }}
             >
-              Project
+              Service
             </Link>
           </Menu.Item>
-          <Menu.Item key="resume">
+          {/* <Menu.Item key="resume">
             <Link
               to="resume"
               smooth={true}
@@ -112,7 +112,7 @@ const Header = () => {
             >
               Resume
             </Link>
-          </Menu.Item>
+          </Menu.Item> */}
           <Menu.Item key="contact">
             <Link
               to="contact"

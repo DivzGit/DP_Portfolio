@@ -9,6 +9,7 @@ import react from "../assets/images/react.svg";
 import mongo from "../assets/images/mongo.svg";
 import redux from "../assets/images/redux.svg";
 import java from "../assets/images/java.svg";
+import typescript from "../assets/images/typescript.svg";
 
 const skills = [
   { name: "HTML", proficiency: 90,image:html },
@@ -16,6 +17,7 @@ const skills = [
   { name: "javaScript", proficiency: 85,image:javaScript  },
   { name: "react", proficiency: 70,image:react },
   { name: "Redux", proficiency: 60,image:redux  },
+  { name: "typescript", proficiency: 60,image:typescript  },
   { name: "java", proficiency: 50,image:java  },
   { name: "MongoDB", proficiency: 70,image:mongo },
 ];

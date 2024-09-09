@@ -22,7 +22,7 @@ nav .logo {
   background: #4b463ca1;
   border-radius: 8px;
   border: 2px solid #07d2de;
-  width: 321px;
+  width: 325px;
 }
 .ant-menu-light.ant-menu-horizontal > .ant-menu-item-active::after {
   border-bottom-width: 2px;
