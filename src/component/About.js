@@ -17,7 +17,7 @@ const skills = [
 
 const About = () => {
   return (
-    <section id="about" className="about-section section_row">
+    <section id="about" className="about-section section_row" style={{height:"auto"}}>
       <div class="center-container">
         <div class="text-container">
           <span class="background-text">RESUME</span>

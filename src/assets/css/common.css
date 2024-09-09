@@ -627,8 +627,13 @@ color: #fff;
 .about-section .section_row .pr-5 .pl-5{
   padding: 0 !important;
 }
+.moblie_proflie_img img{
+  display: block !important;
 }
-
+}
+.moblie_proflie_img img{
+  display: none;
+}
 .center-container {
   display: flex;
   justify-content: center;

@@ -85,4 +85,9 @@
   .service-card-content:hover .service-card-description {
     opacity: 1;
   }
-  
+  .slick-dots li button:before{
+    color: #07d2de;
+  }
+  .slick-dots li.slick-active button:before{
+    color: #07d2de;
+  }
