@@ -7,6 +7,7 @@ import Resume from './component/Resume';
 import Contact from './component/Contact'; 
 import Footer from './component/Footer'; 
 import Icons from './component/Icon';
+import ScrollToTop from './component/ScrollToTop';
 import { Element } from 'react-scroll';
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
     <div className="App text-white">
       <Header />
       <Icons/>
+      <ScrollToTop />
       <Element name="index">
         <Index />
       </Element>

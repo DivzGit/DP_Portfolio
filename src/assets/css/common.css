@@ -1,5 +1,6 @@
 @font-face {
   font-family: "Poppins";
+  /* src: url("../font/poppins/Poppins-Regular.ttf"); */
   src: url("../font/poppins/Poppins-Regular.ttf");
 }
 .font_Poppins {
@@ -7,9 +8,17 @@
 }
 body{
   font-family: "Poppins" !important;
-  margin: 0;
+  margin: 0 !important;
 }
-
+::-webkit-scrollbar {
+  background-color: #0a889f4a;
+  width: 7px;
+  height: 7px;
+}
+::-webkit-scrollbar-thumb {
+  background: #09879e;
+  border-radius: 10px;
+}
 p,div,h1,h2,h3,h4,h5,h6,span,ul,li {
   font-family: "Poppins" !important;
 }
@@ -683,4 +692,14 @@ color: #fff;
 
 .download_btn:hover .resume_text {
   color: #f0f0f0;
+}
+.ant-drawer .ant-drawer-header-title {
+  color: #fff;
+}
+
+.ant-drawer .ant-drawer-close{
+  color: #fff;
+}
+.ant-btn-text:not(:disabled):not(.ant-btn-disabled):hover {
+  color: #fff;
 }

@@ -30,7 +30,7 @@ const NewsletterSubscription = () => {
             Subscribe
           </button>
         </form>
-        {message && <p className="newsletter-message">{message}</p>}
+        {message && <p className="newsletter-message text-center">{message}</p>}
       </div>
     </section>
   );

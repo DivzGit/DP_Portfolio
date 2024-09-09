@@ -3,9 +3,12 @@ import Slider from "react-slick";
 import { Card, Typography, Row, Col } from 'antd';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import web1 from "../assets/images/web1.jpg";
-import web2 from "../assets/images/web2.jpg";
-import web3 from "../assets/images/web3.jpg";
+import WebApplication from "../assets/images/WebApplication.svg";
+import AgileMethod from "../assets/images/agileMethod.svg";
+import FullStack from "../assets/images/Full-Stack.png";
+import API from "../assets/images/API.png";
+import DatabaseDesign from "../assets/images/DatabaseDesign.png";
+import Maintenance from "../assets/images/Maintenance.png";
 import './Service.css';
 
 const { Title, Paragraph } = Typography;
@@ -13,22 +16,42 @@ const { Title, Paragraph } = Typography;
 const services = [
   {
     id: 1,
-    image: web1,
-    alt: "web1",
-    description: "jl dj dfdsfdskfjds dsfjoidsjfuidshf dsfjkjdsfjdhsjf fdldsjflidjsoifue mnvknxvncxmv cvcxn",
+    image: WebApplication,
+    alt: "Web Application Development",
+    description: "With 3.5 years of hands-on experience, I specialize in building robust and scalable web applications using technologies like PHP, MySQL, and JavaScript. Whether you're looking for a custom-built solution or improvements to an existing platform, I deliver high-performance applications tailored to your business needs.",
   },
   {
     id: 2,
-    image: web2,
-    alt: "web2",
-    description: "jl dj dfdsfdskfjds dsfjoidsjfuidshf dsfjkjdsfjdhsjf fdldsjflidjsoifue mnvknxvncxmv cvcxn",
+    image: FullStack,
+    alt: "Full-Stack",
+    description: "Proficient in both front-end and back-end development, I utilize modern frameworks such as React.js and Redux for interactive and user-friendly interfaces, coupled with Spring Boot and MongoDB for a solid, efficient backend. I ensure seamless integration between the two for a smooth user experience.",
   },
   {
     id: 3,
-    image: web3,
-    alt: "web3",
-    description: "jl dj dfdsfdskfjds dsfjoidsjfuidshf dsfjkjdsfjdhsjf fdldsjflidjsoifue mnvknxvncxmv cvcxn",
+    image: API,
+    alt: "API Development & Integration",
+    description: "I design and implement RESTful APIs, ensuring secure and scalable communication between different platforms and services. From third-party API integrations to building custom endpoints, I offer solutions that ensure your application’s data flows smoothly.",
   },
+  {
+    id: 4,
+    image: AgileMethod,
+    alt: "AgileMethod",
+    description: "Experienced in Agile methodologies, I excel in fast-paced environments, consistently delivering high-quality results through collaboration, sprints, and continuous improvement. I actively participate in scrum ceremonies and work closely with teams to drive project success.",
+  },
+  {
+    id: 5,
+    image: DatabaseDesign,
+    alt: "Database Design & Management",
+    description: "Expert in MySQL and MongoDB database management, I ensure data integrity, optimize performance, and design efficient database structures to meet the needs of your applications, whether you're dealing with small datasets or large-scale systems.",
+  },
+  {
+    id: 6,
+    image: Maintenance,
+    alt: "Maintenance & Support",
+    description: "Beyond development, I offer ongoing support and maintenance for web applications, ensuring they remain secure, up-to-date, and optimized for performance. This includes troubleshooting, bug fixes, and implementing new features as your business evolves.",
+  },
+
+ 
 ];
 
 const Service = () => {
@@ -40,6 +63,14 @@ const Service = () => {
     slidesToScroll: 1,
     autoplay: true,   
     autoplaySpeed: 3000,  
+    responsive: [
+      {
+        breakpoint: 768, // For screens 768px and below (Mobile)
+        settings: {
+          slidesToShow: 1, // Show 1 slide
+        },
+      },
+    ],
   };
 
   return (

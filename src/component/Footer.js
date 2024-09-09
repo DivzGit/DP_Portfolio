@@ -14,7 +14,7 @@ const FooterComponent = () => {
       <Row justify={"space-between"}>
         <Col xl={12} lg={12} md={12} sm={24} xs={24}>
           <Text strong style={{ color: '#fff' }}>
-            © {currentYear} Your Company Name. All rights reserved.
+            © {currentYear} All rights reserved.
           </Text>
         </Col>
         

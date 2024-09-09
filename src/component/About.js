@@ -43,14 +43,11 @@ const About = () => {
         </Col>
         <Col xs={24} md={12} className="about-text-col">
           <span className="c_fff">
-            loream dsmvnds dvskjklvjkdsjvkjdskvjkdsjkvsd vdskjnvksdjkvjdsk
-            vdsnvkjsnk loream dsmvnds dvskjklvjkdsjvkjdskvjkdsjkvsd
-            vdskjnvksdjkvjdsk vdsnvkjsnk loream dsmvnds
-            dvskjklvjkdsjvkjdskvjkdsjkvsd vdskjnvksdjkvjdsk vdsnvkjsnk
+          A motivated Computer Science graduate with 3.5 years of hands-on experience in web application development, specializing in PHP, MySQL, and advanced web technologies. Proficient in modern frameworks like Spring Boot, MongoDB, React.js, and Redux, with a strong understanding of agile methodologies. Passionate about leveraging cutting-edge tools to build scalable and efficient applications. Seeking a challenging role to further enhance my skills and contribute to the success of an innovative organization.
           </span>
         </Col>
       </Row>
-      <div className="skills-section p-5 ">
+      <div className="skills-section p-5 pb-0">
         <div className="skills-container">
           {skills.map((skill, index) => (
             <div className="skill" key={index}>
