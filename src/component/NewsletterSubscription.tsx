@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, FormEvent } from 'react';
 import './NewsletterSubscription.css';
 
-const NewsletterSubscription = () => {
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+const NewsletterSubscription: React.FC = () => {
+  const [email, setEmail] = useState<string>('');
+  const [message, setMessage] = useState<string>('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     // Add your form submission logic here
     // For now, we'll just show a success message

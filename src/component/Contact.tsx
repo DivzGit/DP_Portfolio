@@ -1,38 +1,33 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Form, Input, Button, Typography, message, Row, Col } from "antd";
-import "./Contact.css";
 import { FaPaperPlane } from 'react-icons/fa';
-import NewsletterSubscription from './NewsletterSubscription.js';
+import NewsletterSubscription from './NewsletterSubscription'; // Assuming NewsletterSubscription is a .tsx file
+import "./Contact.css";
 
 const { Title } = Typography;
 
-const Contact = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    phone: "",
-    topic: "",
-    message: "",
-    subject: "",
-  });
+interface FormData {
+  name: string;
+  email: string;
+  phone?: string;
+  topic?: string;
+  message: string;
+  subject: string;
+}
 
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({
-      ...formData,
-      [name]: value,
-    });
-  };
+const Contact: React.FC = () => {
+  const [form] = Form.useForm(); // Get the form instance
 
-  const handleSubmit = async (values) => {
+  const handleSubmit = async (values: FormData) => {
     try {
       const response = await axios.post(
-        "http://localhost:8080/api/contact/send",
+        "http://localhost:8035/api/contact/send",
         values
       );
       console.log(response.data);
       message.success("Email sent successfully");
+      form.resetFields(); // Reset the form fields after successful submission
     } catch (error) {
       console.error("There was an error sending the email!", error);
       message.error("Failed to send email");
@@ -40,42 +35,33 @@ const Contact = () => {
   };
 
   return (
-    <section className="contact section_row">
-      <div class="center-container mb-5">
-        <div class="text-container">
-          <span class="background-text">Contact</span>
-          <span class="foreground-text">
-            Get in <span class="highlight">Touch</span>
+    <section className="contact section_row"style={{ height: "auto" }}>
+      <div className="center-container mb-5" >
+        <div className="text-container">
+          <span className="background-text">Contact</span>
+          <span className="foreground-text">
+            Get in <span className="highlight">Touch</span>
           </span>
         </div>
       </div>
 
       <Row justify="center" align="middle" className="mt-5">
         <Col xl={8} lg={8} md={12} sm={24} xs={24} className="index-text-col">
-          <p level={1} className="index-title">
-            DON'T BE SHY!
-          </p>
-          <p className="">
+          <p className="index-title">DON'T BE SHY!</p>
+          <p>
             Feel free to get in touch with me. I am always open to discussing
-            new projects, creative ideas or opportunities to be part of your
+            new projects, creative ideas, or opportunities to be part of your
             visions.
           </p>
         </Col>
-        <Col
-          xl={14}
-          lg={14}
-          md={12}
-          sm={24}
-          xs={24}
-          className="index-image-col"
-        >
+        <Col xl={14} lg={14} md={12} sm={24} xs={24} className="index-image-col">
           <Form
+            form={form} // Pass the form instance
             layout="vertical"
             onFinish={handleSubmit}
-            initialValues={formData}
             style={{ maxWidth: "600px", margin: "0 auto" }}
           >
-            <Row justify="center" align="middle" className="">
+            <Row justify="center" align="middle">
               <Col xl={8} lg={8} md={8} sm={24} xs={24}>
                 <Form.Item
                   label="Your Name"
@@ -83,9 +69,8 @@ const Contact = () => {
                   rules={[
                     { required: true, message: "Please enter your name" },
                   ]}
-                
                 >
-                  <Input name="name" onChange={handleChange} />
+                  <Input />
                 </Form.Item>
               </Col>
               <Col xl={8} lg={8} md={8} sm={24} xs={24}>
@@ -99,9 +84,8 @@ const Contact = () => {
                       message: "Please enter a valid email",
                     },
                   ]}
-                  
                 >
-                  <Input name="email" onChange={handleChange} />
+                  <Input />
                 </Form.Item>
               </Col>
               <Col xl={8} lg={8} md={8} sm={24} xs={24}>
@@ -111,9 +95,8 @@ const Contact = () => {
                   rules={[
                     { required: true, message: "Please enter the subject" },
                   ]}
-                  
                 >
-                  <Input name="subject" onChange={handleChange} />
+                  <Input />
                 </Form.Item>
               </Col>
             </Row>
@@ -123,14 +106,14 @@ const Contact = () => {
               name="message"
               rules={[{ required: true, message: "Please enter your message" }]}
             >
-              <Input.TextArea name="message" onChange={handleChange} />
+              <Input.TextArea />
             </Form.Item>
 
             <Form.Item>
               <Button
                 type="primary"
                 htmlType="submit"
-                style={{ backgroundColor: "#07d2de", borderColor: "#07d2de",padding: "10px 20px" }}
+                style={{ backgroundColor: "#07d2de", borderColor: "#07d2de", padding: "10px 20px" }}
               >
                 Send Message <FaPaperPlane />
               </Button>
@@ -138,7 +121,7 @@ const Contact = () => {
           </Form>
         </Col>
       </Row>
-      <NewsletterSubscription  className="mt-5"/>
+      <NewsletterSubscription />
     </section>
   );
 };

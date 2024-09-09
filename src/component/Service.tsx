@@ -1,6 +1,6 @@
 import React from "react";
 import Slider from "react-slick";
-import { Card, Typography, Row, Col } from 'antd';
+import { Card, Typography } from 'antd';
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import WebApplication from "../assets/images/WebApplication.svg";
@@ -11,9 +11,33 @@ import DatabaseDesign from "../assets/images/DatabaseDesign.png";
 import Maintenance from "../assets/images/Maintenance.png";
 import './Service.css';
 
-const { Title, Paragraph } = Typography;
+const { Paragraph } = Typography;
+// Define a type for the service object
+interface Service {
+  id: number;
+  image: string;
+  alt: string;
+  description: string;
+}
 
-const services = [
+// Define the settings type for the slider
+interface SliderSettings {
+  dots: boolean;
+  infinite: boolean;
+  speed: number;
+  slidesToShow: number;
+  slidesToScroll: number;
+  autoplay: boolean;
+  autoplaySpeed: number;
+  responsive: Array<{
+    breakpoint: number;
+    settings: {
+      slidesToShow: number;
+    };
+  }>;
+}
+
+const services: Service[] = [
   {
     id: 1,
     image: WebApplication,
@@ -50,19 +74,17 @@ const services = [
     alt: "Maintenance & Support",
     description: "Beyond development, I offer ongoing support and maintenance for web applications, ensuring they remain secure, up-to-date, and optimized for performance. This includes troubleshooting, bug fixes, and implementing new features as your business evolves.",
   },
-
- 
 ];
 
-const Service = () => {
-  const settings = {
+const Service: React.FC = () => {
+  const settings: SliderSettings = {
     dots: true,
     infinite: true,
     speed: 500,
     slidesToShow: 3,
     slidesToScroll: 1,
-    autoplay: true,   
-    autoplaySpeed: 8000,  
+    autoplay: true,
+    autoplaySpeed: 8000,
     responsive: [
       {
         breakpoint: 768, // For screens 768px and below (Mobile)
@@ -74,20 +96,15 @@ const Service = () => {
   };
 
   return (
-    <section className="service-section section_row p-5">
-      <div class="center-container">
-        <div class="text-container">
-          <span class="background-text">Works</span>
-          <span class="foreground-text">
-           <span class="highlight">Service</span>
+    <section className="service-section section_row p-5" style={{ height: "auto" }}>
+      <div className="center-container">
+        <div className="text-container">
+          <span className="background-text">Works</span>
+          <span className="foreground-text">
+           <span className="highlight">Service</span>
           </span>
         </div>
       </div>
-      {/* <div className="service-header">
-        <Paragraph className="service-description">
-          loream cjh cdscndsncm dscndskjncksdcndsjcndscnkds cdcndksjcndms cdsnckjnsdj
-        </Paragraph>
-      </div> */}
       <div className="service-slider mt-5">
         <Slider {...settings}>
           {services.map((service) => (
