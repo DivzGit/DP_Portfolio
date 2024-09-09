@@ -1,18 +1,23 @@
 import React from "react";
 import { Typography, Row, Col ,Progress} from "antd";
-import { FaUser, FaEnvelope,FaDownload } from "react-icons/fa";
-
+import { FaUser, FaEnvelope } from "react-icons/fa";
 import "./About.css";
+import html from "../assets/images/html.svg";
+import css from "../assets/images/css.svg";
+import javaScript from "../assets/images/javascript.svg";
+import react from "../assets/images/react.svg";
+import mongo from "../assets/images/mongo.svg";
+import redux from "../assets/images/redux.svg";
+import java from "../assets/images/java.svg";
 
 const skills = [
-  { name: "HTML", proficiency: 90 },
-  { name: "CSS", proficiency: 85 },
-  { name: "React", proficiency: 80 },
-  { name: "Spring Boot", proficiency: 75 },
-  { name: "MongoDB", proficiency: 70 },
-  { name: "HTML", proficiency: 90 },
-  { name: "CSS", proficiency: 85 },
-  { name: "React", proficiency: 80 }
+  { name: "HTML", proficiency: 90,image:html },
+  { name: "CSS", proficiency: 90,image:css  },
+  { name: "javaScript", proficiency: 85,image:javaScript  },
+  { name: "react", proficiency: 70,image:react },
+  { name: "Redux", proficiency: 60,image:redux  },
+  { name: "java", proficiency: 50,image:java  },
+  { name: "MongoDB", proficiency: 70,image:mongo },
 ];
 
 const About = () => {
@@ -51,16 +56,28 @@ const About = () => {
         <div className="skills-container">
           {skills.map((skill, index) => (
             <div className="skill" key={index}>
+              <div className="progress-with-image">
               <Progress
+                  type="circle"
+                  percent={skill.proficiency}
+                  format={() => ""}
+                  strokeColor="#07d2de"
+                  trailColor="#ddd"
+                  width={120}
+                />
+              {/* <Progress
                 type="circle"
                 percent={skill.proficiency}
-                format={(percent) => (
-                  <span style={{ color: "white" }}>{`${percent}%`}</span>
-                )}
+                // format={(percent) => (
+                //   <span style={{ color: "white" }}>{`${percent}%`}</span>
+                // )}
                 strokeColor="#07d2de"
                 trailColor="#ddd" // Ensure the trail color is visible
-              />
-              <p className="skill-name pl-5">{skill.name}</p>
+              /> */}
+                <img src={skill.image} alt={skill.name} className="progress-image" />
+              </div>
+              <p className="skill-name pl-1">{skill.name} </p>
+              <p className="skill-name pl-1 m-0 mt-1">{skill.proficiency}%</p>
             </div>
           ))}
         </div>
